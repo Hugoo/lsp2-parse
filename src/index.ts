@@ -6,9 +6,7 @@
 
 import { ERC725JSONSchema } from '@erc725/erc725.js';
 
-function findSchemaForKey(key: string): ERC725JSONSchema | null {
-  return null;
-}
+import { parser } from './parser';
 
 /**
  *
@@ -25,12 +23,12 @@ export function lsp2Parse(
   if (Array.isArray(keyOrKeys)) {
     return keyOrKeys.reduce<Record<string, ERC725JSONSchema | null>>(
       (acc, key) => {
-        acc[key] = findSchemaForKey(key);
+        acc[key] = parser(key);
         return acc;
       },
       {},
     );
   }
 
-  return findSchemaForKey(keyOrKeys);
+  return parser(keyOrKeys);
 }
