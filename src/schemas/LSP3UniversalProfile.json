@@ -27,7 +27,6 @@
     "valueContent": "Address",
     "valueType": "address"
   },
-
   {
     "name": "LSP5ReceivedAssetsMap:<address>",
     "key": "0x812c4334633eb81600000000<address>",
