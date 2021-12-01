@@ -1,13 +1,14 @@
 {
   "name": "lsp2-parse",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Parse LSP-2 ERC725YJSONSchema key hashes",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "eslint . --ext .ts",
-    "test": "jest"
+    "test": "jest",
+    "docs:generate": "typedoc --options typedoc.json"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,8 @@
     "jest": "^27.4.2",
     "prettier": "^2.5.0",
     "ts-jest": "^27.0.7",
+    "typedoc": "^0.22.10",
+    "typedoc-plugin-markdown": "^3.11.7",
     "typescript": "^4.5.2"
   },
   "files": [

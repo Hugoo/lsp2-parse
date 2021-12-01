@@ -1,0 +1,11 @@
+{
+  "entryPoints": ["./src/index.ts"],
+  "out": "docs/technical-reference",
+  "includeVersion": true,
+  "readme": "none",
+  "excludePrivate": true,
+  "hideInPageTOC": true,
+  "hideBreadcrumbs": true,
+  "githubPages": false,
+  "exclude": ["**/*+(.spec|.e2e).ts"]
+}

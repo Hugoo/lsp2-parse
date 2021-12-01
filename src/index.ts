@@ -10,9 +10,11 @@ import allSchemas from './schemas';
 import { parser } from './parser';
 
 /**
+ * Parses a hashed key or a list of hashed keys and will attempt to return its corresponding LSP-2 ERC725YJSONSchema object.
+ * The function will look for a corresponding key within the schemas provided in `./schemas` folder.
  *
- *
- * @param keyOrKeys
+ * @param keyOrKeys The hashed key or array of keys for which you want to find the corresponding LSP-2 ERC725YJSONSchema.
+ * @param providedSchemas If you provide your own ERC725JSONSchemas, the parser will also try to find a key match against these schemas.
  */
 export function lsp2Parse(
   keyOrKeys: string[],
