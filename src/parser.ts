@@ -93,7 +93,6 @@ const findMappingSchemaForKey = (
   };
 };
 
-// TODO:
 const findBytes20MappingSchemaForKey = (
   key: string,
   schemas: ERC725JSONSchema[],
