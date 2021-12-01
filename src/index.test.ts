@@ -1,3 +1,5 @@
+import { ERC725JSONSchema } from '@erc725/erc725.js';
+
 import { lsp2Parse } from '.';
 
 describe('lsp2parse', () => {
@@ -83,9 +85,27 @@ describe('lsp2parse', () => {
       });
     });
   });
+
   describe('Bytes20Mapping', () => {
-    it.todo('finds Bytes20Mapping');
+    it('finds Bytes20Mapping', () => {
+      const address = 'af3bf2ffb025098b79caddfbdd113b3681817744';
+      const name = `MyCoolAddress:${address}`;
+      const key = `0x22496f48a493035f00000000${address}`;
+
+      const extraSchema: ERC725JSONSchema = {
+        name,
+        key,
+        keyType: 'Bytes20Mapping',
+        valueContent: 'Address',
+        valueType: 'address',
+      };
+
+      const schema = lsp2Parse(key, [extraSchema]);
+
+      expect(schema).toEqual(extraSchema);
+    });
   });
+
   describe('Bytes20MappingWithGrouping', () => {
     it('finds Bytes20MappingWithGrouping', () => {
       const address = 'af3bf2ffb025098b79caddfbdd113b3681817744';

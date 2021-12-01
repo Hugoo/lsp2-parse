@@ -98,6 +98,23 @@ const findBytes20MappingSchemaForKey = (
   key: string,
   schemas: ERC725JSONSchema[],
 ): ERC725JSONSchema | null => {
+  const keySchema =
+    schemas.find((schema) => schema.key.substr(0, 26) === key.substr(0, 26)) ||
+    null;
+
+  const address = key.substr(26);
+
+  if (keySchema) {
+    return {
+      ...keySchema,
+      key,
+      name: `${keySchema.name.substr(
+        0,
+        keySchema.name.lastIndexOf(':'),
+      )}:${address}`,
+    };
+  }
+
   return null;
 };
 
