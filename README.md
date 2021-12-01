@@ -41,3 +41,16 @@ lsp2Parse([
 }
 */
 ```
+
+## LSP-2 ERC725YJSONSchemas
+
+### Supported schemas
+
+- `LSP3UniversalProfile` (11-30-2021)
+- `LSP4DigitalAsset` (11-30-2021)
+- `LSP5ReceivedAssets` (11-30-2021)
+- `LSP6KeyManager` (11-30-2021)
+
+### Contribute
+
+You can add your own schemas in the [`./src/schemas/`](./src/schemas/) folder and send a PR.
